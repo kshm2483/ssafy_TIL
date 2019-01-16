@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        body {
+            height: 10000px;
+        }
+        table, tr, td {
+            border: 1px solid darkgray;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 id="edu">프로그래밍 교육</h1>
+    </header>
+    <nav>
+        <a href="#python">
+            <img src="images/python.jpg" width="50px" height="50px" alt="python"> <!-- alt는 사용자경험을 위해 채울 것 -->
+        </a>
+        <a href="reference.html">참고사이트</a>
+    </nav>
+    <hr>
+    <h2><a href="https://docs.python.org/ko/3/" target="_blank">파이썬</a></h2>
+    <h3>Number type</h3>
+    <div>
+        <p>파이썬에서 숫자형은 아래와 같이 있다.</p>
+        <ol>
+            <li>int</li>
+            <li>float</li>
+            <li>complex</li>
+            <li><del>str</del></li>
+        </ol>
+    </div>
+    <h3>Sequence</h3>
+    <div>
+        <p>파이썬에서 시퀀스는 아래와 같이 있다.</p>
+        <p><strong>시퀀스는 for문을 돌릴 수 있다!!</strong></p>
+        <ol style="list-style-type: hiragana">  <!-- style 지정 -->
+            <li>str</li>
+            <li>list</li>
+            <li>tuple</li>
+            <li>range</li>
+        </ol>
+    </div>
+    <hr>
+    <h2><a href="https://developer.mozilla.org/ko/">웹</a></h2>
+    <h3>기초</h3>
+    <div>
+        <ul style="list-style-type: square">
+            <li>HTML</li>
+            <li>CSS</li>
+            <li id="python">파이썬</li>
+        </ul>
+    </div>
+    <section id="link">
+        <a href="https://www.google.com/" target="_self">절대 URL</a>
+        <a href="reference.html" target="_blank">상대 URL</a>
+        <a href="#edu">교육으로 이동</a>
+        <a href="mailto:test@gmail.com">메일 보내기</a>
+    </section>
+    <section>
+        <img src="images/python.jpg" width="150px" height="150px" alt="python2">
+        <iframe width="350" height="150" src="https://www.youtube.com/embed/WiJqVQSmWHU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </section>
+    <!-- Table 실습 -->
+    <section>
+        <table>
+            <tr>
+                <th></th>
+                <th>월</th>
+                <th>화</th>
+                <th>수</th>
+            </tr>
+            <tr>
+                <td>A코스</td>
+                <td colspan="2">짬뽕</td>
+                <td rowspan="2">초밥</td>
+            </tr>
+            <tr>
+                <td>B코스</td>
+                <td>김치찌개</td>
+                <td>삼계탕</td>
+            </tr>
+        </table>
+    </section>
+    <section>
+        <h1>2019 타임테이블</h1>
+        <table>
+            <tr>
+                <th>TIME</th>
+                <th>INDOOR</th>
+                <th colspan="2">OUTDOOR</th>
+            </tr>
+            <tr>
+                <td></td>
+                <td>소극장</td>
+                <td>잔디마당</td>
+                <td>대공연장</td>
+            </tr>
+            <tr>
+                <td>10:00</td>
+                <td rowspan="2">안녕하신가영</td>
+                <td></td>
+                <td>10CM</td>
+            </tr>
+            <tr>
+                <td>13:00</td>
+                <td rowspan="2">선우정아</td>
+                <td rowspan="2">참깨와 솜사탕</td>
+            </tr>
+            <tr>
+                <td>15:00</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>17:00</td>
+                <td>크러쉬</td>
+                <td></td>
+                <td>폴킴</td>
+            </tr>
+        </table><br><br>
+    </section>
+    <!-- form 실습 -->
+    <section>
+        <h2>FORM INPUT</h2>
+        <form action="https://www.google.com/search?">
+            텍스트 : <input type="text" name="q" autofocus><br> <!-- page 시작시 포커스-->
+            이메일 : <input type="email" autocomplete="on"><br> <!-- 그동안 사용했던 양식 제공-->
+            비밀번호 : <input type="password"><br>
+            날짜 : <input type="date">
+            <input type="hidden" name="해커" value="사람">
+            <input type="submit" value="전송!"><br>
+            <!-- radio button -->
+            <input type="radio" name="gender" value="female" checked>여자<br>
+            <input type="radio" name="gender" value="male">남자<br>
+            <!-- check box -->
+            <input type="checkbox" name="option" value="1">sia<br>
+            <input type="checkbox" name="option" value="2">Queen<br>
+            <input type="checkbox" name="option" value="3">Bieber<br>
+
+            <input type="number" name="size" min="10" max="60" step="10" value="15"><br>
+            <!-- dropdown -->
+            <select name="country">
+                <option value="kor">한국</option>
+                <option value="jap" disabled>일본</option>
+                <option value="chi" selected>중국</option>
+            </select>
+        </form>
+    </section>
+    <br><br>
+    <section>
+        <h1>FORM</h1>
+        <p>주문서를 작성하여 주십시오.</p>
+        이름: <input type="text" name="name" placeholder="이름을 입력해주세요" autofocus><br>
+        날짜: <input type="date" name="date" value="2019-01-16"><br>
+        <h4>1. 샌드위치 선택</h4>
+        <input type="radio" name="sand" checked>에그 마요<br>
+        <input type="radio" name="sand">이탈리안 비엠티<br>
+        <input type="radio" name="sand">터키 베이컨 아보카도<br>
+        <hr>
+        <h4>2. 사이즈 선택</h4>
+        <input type="number" name="size" min="15" max="30" step="15" value="15"><br>
+        <hr>
+        <h4>3. 빵</h4>
+        <select name="">
+            <option value="bread">허니오트</option>
+            <option value="bread" disabled>플랫브래드</option>
+            <option value="bread">하티 이탈리안</option>
+        </select>
+        <hr>
+        <h4>4. 야채/소스</h4>
+        <input type="checkbox" name="tomato" value="1">토마토<br>
+        <input type="checkbox" name="o2" value="2">오이<br>
+        <input type="checkbox" name="hala" value="3">할라피뇨<br>
+        <input type="checkbox" name="hot" value="4">핫 칠리<br>
+        <input type="checkbox" name="que" value="5">바베큐<br>
+        <input type="submit" value="submit">
+    </section>
+</body>
+</html>
