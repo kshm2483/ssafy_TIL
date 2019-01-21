@@ -106,19 +106,23 @@ with open('movie.csv', 'w', newline='', encoding='utf-8') as f:
                         'Actors2': actors2[i], 'Actors3': actors3[i]})
 
 
+# client_id = os.getenv('naver_id')
+# client_secret = os.getenv('naver_pw')
+# for i in range(len(movie_nameko)):
+#     encText = urllib.parse.quote(f"{movie_nameko[i]}")
+#     url = "https://openapi.naver.com/v1/search/movie.json?display=1&query=" + encText
+#     request = urllib.request.Request(url)
+#     request.add_header("X-Naver-Client-Id",client_id)
+#     request.add_header("X-Naver-Client-Secret",client_secret)
+#     response = urllib.request.urlopen(request)
+#     rescode = response.getcode()
+#     if(rescode==200):
+#         response_body = response.read()
+#         print(response_body.decode('utf-8'))
+#         print(type(response_body))
+#     else:
+#         print("Error Code:" + rescode)
+
 client_id = os.getenv('naver_id')
 client_secret = os.getenv('naver_pw')
-for i in range(len(movie_nameko)):
-    encText = urllib.parse.quote(f"{movie_nameko[i]}")
-    url = "https://openapi.naver.com/v1/search/movie.json?display=1&query=" + encText
-    request = urllib.request.Request(url)
-    request.add_header("X-Naver-Client-Id",client_id)
-    request.add_header("X-Naver-Client-Secret",client_secret)
-    response = urllib.request.urlopen(request)
-    rescode = response.getcode()
-    if(rescode==200):
-        response_body = response.read()
-        print(response_body.decode('utf-8'))
-        print(type(response_body))
-    else:
-        print("Error Code:" + rescode)
+
