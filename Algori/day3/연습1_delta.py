@@ -15,8 +15,8 @@ dy = [-1, 1, 0, 0]
 print(arr)
 
 sum = 0
-for x in range(len(arr)):
-    for y in range(len(arr[x])):
+for y in range(len(arr)):
+    for x in range(len(arr[0])):                    # 길이가 같으니까 0해도 무관
         for i in range(4):
             testX = x + dx[i]
             testY = y + dy[i]
