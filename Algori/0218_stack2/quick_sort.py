@@ -29,7 +29,6 @@ def quicksort(a, low, high):
         quicksort(a, low, pivot-1)
         quicksort(a, pivot+1, high)
 
-
 arr = [11, 45, 22, 81, 23, 34, 99, 22, 17]
 PrintArray()
 quicksort(arr, 0, len(arr)-1)
