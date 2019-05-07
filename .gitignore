@@ -1,6 +1,19 @@
 
-# Created by https://www.gitignore.io/api/python
-# Edit at https://www.gitignore.io/?templates=python
+# Created by https://www.gitignore.io/api/vuejs,cloud9,python,jupyternotebook
+# Edit at https://www.gitignore.io/?templates=vuejs,cloud9,python,jupyternotebook
+
+### Cloud9 ###
+# Cloud9 IDE - http://c9.io
+.c9revisions
+.c9
+
+### JupyterNotebook ###
+.ipynb_checkpoints
+*/.ipynb_checkpoints/*
+
+# Remove previous ipynb_checkpoints
+#   git rm -r .ipynb_checkpoints/
+#
 
 ### Python ###
 # Byte-compiled / optimized / DLL files
@@ -25,6 +38,7 @@ parts/
 sdist/
 var/
 wheels/
+pip-wheel-metadata/
 share/python-wheels/
 *.egg-info/
 .installed.cfg
@@ -77,7 +91,6 @@ docs/_build/
 target/
 
 # Jupyter Notebook
-.ipynb_checkpoints
 
 # IPython
 profile_default/
@@ -85,6 +98,13 @@ ipython_config.py
 
 # pyenv
 .python-version
+
+# pipenv
+#   According to pypa/pipenv#598, it is recommended to include Pipfile.lock in version control.
+#   However, in case of collaboration, if having platform-specific dependencies or dependencies
+#   having no cross-platform support, pipenv may install dependencies that don¡¯t work, or not
+#   install all needed dependencies.
+#Pipfile.lock
 
 # celery beat schedule file
 celerybeat-schedule
@@ -119,7 +139,11 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
-### Python Patch ###
-.venv/
+### Vuejs ###
+# Recommended template: Node.gitignore
 
-# End of https://www.gitignore.io/api/python
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# End of https://www.gitignore.io/api/vuejs,cloud9,python,jupyternotebook

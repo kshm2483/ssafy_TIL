@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <button id="sendMessage">terror</button>
+    <button id="reFresh">refresh</button>
+    <div id="postsList">
+    </div>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+        const url = "http://13.125.249.144:8080/ssafy/daejeon/2/posts"
+
+        const getPost = () => {
+            axios.get(url)
+            .then(res => res.data.posts)
+            .then(url => {
+                const divTag = document.createElement('div')
+                divTag.innerText = url
+                document.querySelector('.postsList').prepend(divTag)
+            })
+        }
+        const rebtn = document.querySelector('#reFresh')
+        rebtn.addEventListener('click', getPost)
+
+        const sendPost = () => {
+            const data = {
+                "post": {
+                    "title": "why",
+                    "content": "what",
+                    "author": "who"
+                }
+            }
+            axios.post(url, data)
+                .then(res => console.log('작성완료'))
+                .catch(error => console.log('에러발생'))
+        }
+        const btn = document.querySelector('#sendMessage')
+        btn.addEventListener('click', sendPost)
+    </script>
+</body>
+</html>

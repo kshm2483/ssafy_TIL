@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    .completed {
+        text-decoration: line-through;
+        opacity: 0.6;
+    }
+    </style>
+</head>
+<body>
+    <div :style="{ color : activeColor, fontSize: fontSize + 'px'}" ></div>
+    <div id="app">
+        <select v-model="status">
+            <option selected value="all">ALL</option>
+            <option value="active">ACTIVE</option>
+            <option value="completed">COMPLETED</option>
+        </select>
+        <div v-for="todo in todosByStatus" :key="todo.id">
+            <!-- <li v-for="todo in todos" v-if="!todo.completed" v-on:click="todo.completed = true">  -->
+            <input type="checkbox" v-model="todo.completed">
+            <span :class="{completed: todo.completed}">
+                {{ todo.content }}
+            </span>
+            <span>{{ reversedNewTodo }}</span>
+        </div>
+        <!-- <li v-else v-on:click="check(todo)">
+            <s>{{ todo.content }}</s>
+        </li> -->
+        <input type="text" v-model="newTodo" v-on:keyup.enter="addTodo">
+        <button @click="addTodo">+</button>
+        <footer>
+            <button @click="clearCompleted">Clear</button>
+        </footer>
+    </div>
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        const app = new Vue ({
+            el: '#app',
+            data: {
+                todos: [
+                    {
+                        id : 1,
+                        content : '점심 메뉴 고민',
+                        completed: true,
+                    },
+                    {   
+                        id : 2,
+                        content : '사다리 타기',
+                        completed: false,
+                    },
+                    {
+                        id : 3,
+                        content : '야외 수업 하기',
+                        completed: false,
+                    },
+                    {
+                        id : 4,
+                        content : '야자 하기',
+                        completed: false, 
+                    }
+                ],
+                newTodo: '',
+                activeColor: 'red',
+                fontSize: 30,
+                status: 'all',
+            },
+            methods : {
+                check : function (todo) {
+                    todo.completed = !todo.completed
+                },
+                addTodo: function () {
+                    this.todos.push({
+                        id : Date.now(),
+                        content: this.newTodo,
+                        completed: false,
+                    })
+                    this.newTodo = ''
+                },
+                clearCompleted: function () {
+                    // filter 로 false 애들만 걸러서 todos 에 다시 할당.
+                    const notCompltedTodos = this.todos.filter(todo => !todo.completed)
+                    this.todos = notCompltedTodos
+                },
+                
+            },
+            computed: {
+                todosByStatus: function() {
+                    if (this.status === 'active') {
+                        return this.todos.filter(todo => !todo.completed)
+                    }
+                    if (this.status === 'completed') {
+                        return this.todos.filter(todo => todo.completed)
+                    }
+                    return this.todos
+                },
+                reversedNewTodo: function() {
+                    return this.newTodo.split('').reverse().join('')
+                }
+            }
+        })
+    </script>
+</body>
+</html>
