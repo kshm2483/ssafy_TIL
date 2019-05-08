@@ -1,23 +1,22 @@
 
-# Created by https://www.gitignore.io/api/vuejs,cloud9,python,jupyternotebook
-# Edit at https://www.gitignore.io/?templates=vuejs,cloud9,python,jupyternotebook
+# Created by https://www.gitignore.io/api/vuejs,django,python,firebase,jupyternotebook,visualstudiocode
+# Edit at https://www.gitignore.io/?templates=vuejs,django,python,firebase,jupyternotebook,visualstudiocode
 
-### Cloud9 ###
-# Cloud9 IDE - http://c9.io
-.c9revisions
-.c9
-
-### JupyterNotebook ###
-.ipynb_checkpoints
-*/.ipynb_checkpoints/*
-
-# Remove previous ipynb_checkpoints
-#   git rm -r .ipynb_checkpoints/
-#
-
-### Python ###
-# Byte-compiled / optimized / DLL files
+### Django ###
+*.log
+*.pot
+*.pyc
 __pycache__/
+local_settings.py
+db.sqlite3
+media
+
+# If your build process includes running collectstatic, then you probably don't need or want to include staticfiles/
+# in your Git repository. Update and uncomment the following line accordingly.
+# <django-project-name>/staticfiles/
+
+### Django.Python Stack ###
+# Byte-compiled / optimized / DLL files
 *.py[cod]
 *$py.class
 
@@ -70,12 +69,8 @@ coverage.xml
 
 # Translations
 *.mo
-*.pot
 
 # Django stuff:
-*.log
-local_settings.py
-db.sqlite3
 
 # Flask stuff:
 instance/
@@ -91,6 +86,7 @@ docs/_build/
 target/
 
 # Jupyter Notebook
+.ipynb_checkpoints
 
 # IPython
 profile_default/
@@ -139,6 +135,88 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
+### Firebase ###
+.idea
+**/node_modules/*
+**/.firebaserc
+
+### Firebase Patch ###
+.runtimeconfig.json
+.firebase/
+
+### JupyterNotebook ###
+*/.ipynb_checkpoints/*
+
+# Remove previous ipynb_checkpoints
+#   git rm -r .ipynb_checkpoints/
+#
+
+### Python ###
+# Byte-compiled / optimized / DLL files
+
+# C extensions
+
+# Distribution / packaging
+
+# PyInstaller
+#  Usually these files are written by a python script from a template
+#  before PyInstaller builds the exe, so as to inject date/other infos into it.
+
+# Installer logs
+
+# Unit test / coverage reports
+
+# Translations
+
+# Django stuff:
+
+# Flask stuff:
+
+# Scrapy stuff:
+
+# Sphinx documentation
+
+# PyBuilder
+
+# Jupyter Notebook
+
+# IPython
+
+# pyenv
+
+# pipenv
+#   According to pypa/pipenv#598, it is recommended to include Pipfile.lock in version control.
+#   However, in case of collaboration, if having platform-specific dependencies or dependencies
+#   having no cross-platform support, pipenv may install dependencies that don¡¯t work, or not
+#   install all needed dependencies.
+
+# celery beat schedule file
+
+# SageMath parsed files
+
+# Environments
+
+# Spyder project settings
+
+# Rope project settings
+
+# mkdocs documentation
+
+# mypy
+
+# Pyre type checker
+
+### VisualStudioCode ###
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+### VisualStudioCode Patch ###
+# Ignore all local history of files
+.history
+
 ### Vuejs ###
 # Recommended template: Node.gitignore
 
@@ -146,4 +224,4 @@ node_modules/
 npm-debug.log
 yarn-error.log
 
-# End of https://www.gitignore.io/api/vuejs,cloud9,python,jupyternotebook
+# End of https://www.gitignore.io/api/vuejs,django,python,firebase,jupyternotebook,visualstudiocode
